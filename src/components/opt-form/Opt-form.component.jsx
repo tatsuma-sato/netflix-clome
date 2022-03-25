@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState, useContext, createContext } from "react";
 import {
   Container,
   Input,
   Button,
   Text,
   Break,
+  Box,
+  Label,
 } from "./styles/opt-form.styles";
 
 const OptForm = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
-OptForm.Input = function OptFormInput({ ...restProps }) {
-  return <Input {...restProps} />;
+OptForm.InputForm = function OptFormInputForm({ ...restProps }) {
+  const [active, setActive] = useState(false);
+
+  return (
+    <Box onClick={(e) => setActive(true)}>
+      <Label htmlFor="email" className={`${active ? "active" : ""}`}>
+        Email Address
+      </Label>
+      <Input
+        id="email"
+        name="email"
+        onBlur={() => setActive(false)}
+        {...restProps}
+      />
+    </Box>
+  );
 };
 
 OptForm.Button = function OptFormButton({ children, ...restProps }) {

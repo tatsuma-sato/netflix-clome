@@ -78,3 +78,24 @@ export const Text = styled.p`
     line-height: 22px;
   }
 `;
+
+export const Box = styled.div`
+  display: inline;
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+`;
+export const Label = styled.label`
+  width: auto;
+  top: 23px;
+  left: 10px;
+  color: black;
+  position: absolute;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &.active {
+    font-size: 12px;
+    top: 8px;
+  }
+`;

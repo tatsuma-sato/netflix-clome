@@ -15,7 +15,7 @@ const Home = () => {
             Watch anywhere. Cancel at any time
           </Feature.Subtitle>
           <OptForm>
-            <OptForm.Input placeholder="Email Address" />
+            <OptForm.InputForm />
             <OptForm.Button>Get Started</OptForm.Button>
             <OptForm.Break />
             <OptForm.Text>
